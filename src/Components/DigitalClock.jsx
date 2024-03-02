@@ -5,10 +5,9 @@ function DigitalClock() {
     const [currentTime, setCurrentTime] = useState("Current Time");
 
     useEffect(() => {
-        console.log("abc");
+
+        const currentDate = new Date();
         const interval = setInterval(() => {
-            console.log("in inside interval");
-            const currentDate = new Date();
             setCurrentTime(currentDate.toLocaleTimeString());
         }, 1000);
 
@@ -16,7 +15,7 @@ function DigitalClock() {
             clearInterval(interval);
         }
 
-    }, [])
+    }, [currentTime])
     return (
         <>
             <div className='container'>
